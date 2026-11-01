@@ -1,0 +1,13 @@
+! MBox TV (com.community.mbox.tv) — blocage publicitaire personnel
+! Régies et traçage Transsion + Google Ads. Format AdGuard (jokers domaine).
+! Compatible : AdGuard Home, AdGuard (app), uBlock Origin.
+
+||hisavana.com^
+||eagllwin.com^
+||shalltry.com^
+||sunnbird.com^
+||cnamedomain.com^
+||googlesyndication.com^
+||googleadservices.com^
+||app-measurement.com^
+||graph.facebook.com^

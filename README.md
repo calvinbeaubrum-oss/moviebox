@@ -22,7 +22,9 @@ Audit indépendant, **purement statique**, de l'application Android MovieBox (pa
 | `10-guide-utilisateur/` | Guide légitime : bloquer les pubs par DNS, permissions, confidentialité in-app, limites VIP |
 | `data/` | Dumps bruts des endpoints extraits du code 3.0.15 |
 | `doc-source/` | Documents d'analyse d'origine (endpoints 3.0.15/16, cahier des charges réseau 3.0.16) |
-| `refs/` | Méthodologie et limites de l'audit |
+| `refs/` | Méthodologie, limites et **journal des travaux** (ce qui a été exécuté, session par session) |
+| `outils/` | Scripts d'analyse maison : déchiffreur Ijiami (validé), scan DEX, attaques documentées, script Ghidra |
+| `11-mbox-tv/` | App sœur MBox TV (`com.community.mbox.tv`) : fiche technique, rapport sécurité, analyse VIP, blocage pubs TV |
 
 ---
 
@@ -38,6 +40,14 @@ Audit indépendant, **purement statique**, de l'application Android MovieBox (pa
 - **VIP/paiements** : la logique de gating VIP est côté client (chaîne paiements TransPay, endpoints `user-api/*`) ; le détail est documenté à titre d'audit, sans procédure de contournement.
 
 ---
+
+## Outils & méthode d'analyse
+
+Tout ce qui a été exécuté pour produire ces résultats est documenté et reproductible :
+
+- **Journal des travaux** : [`refs/journal-des-travaux.md`](refs/journal-des-travaux.md) — session par session, chantiers terminés et chantiers ouverts.
+- **Scripts maison** : [`outils/README.md`](outils/README.md) — déchiffreur des chaînes du stub Ijiami (validé), scan du DEX, deux attaques sur le payload chiffré (négatives, documentées), script Ghidra de dump de décompilation.
+- **Chaîne d'outils** : REA (inventaires certifiés par empreinte), jadx 1.5.6, UPX 5.3.0 + réimplémentation NRV2E_LE32, Ghidra (ARM64).
 
 ## Serveurs & endpoints
 
@@ -76,6 +86,8 @@ Ce dépôt **ne redistribue pas** le binaire de l'application (fichier propriét
 
 Version 3.0.15 : endpoints et dictionnaire API couverts (`data/`, `03-api/`) ; fiche d'identité détaillée non consolidée.
 
+Restent également hors dépôt, pour la même raison (binaires/contenus de l'éditeur) : le code décompilé intégral (42 206 fichiers Java pour la 3.0.15, 15 051 pour MBox TV), les trois librairies natives du packer et les APK eux-mêmes. Le journal des travaux et les outils permettent de reproduire ces extractions localement.
+
 ---
 
 ## Politique de rédaction
@@ -103,6 +115,7 @@ Le dossier `10-guide-utilisateur/` fournit la partie utile sans modification de 
 - Analyse **statique uniquement** : les tentatives dynamiques sur émulateur ont échoué (SIGSEGV dans le VMP Ijiami) — voir `04-securite/packer-ijiami.md`.
 - Dévirtualisation de l'interpréteur VMP non tentée.
 - La disponibilité des serveurs et les comportements réseau réels (3.0.16) nécessiteraient une capture MITM sur appareil — hors périmètre de ce dépôt public.
+- Chantiers ouverts (dévirtualisation VMP, dump mémoire à l'exécution, fiche 3.0.15, monitoring serveurs) : listés dans [`refs/journal-des-travaux.md`](refs/journal-des-travaux.md).
 
 ## Licence
 

@@ -1,0 +1,40 @@
+# MBox TV (com.community.mbox.tv) — blocage publicitaire personnel
+# Domaines de régies et de traçage extraits du code décompilé.
+# Application : personalDNSfilter, DNS66, Pi-hole, AdGuard Home (voir GUIDE-BLOCAGE.md).
+
+# --- Hisavana : SDK publicitaire Transsion (com.cloud.hisavana.sdk) ---
+0.0.0.0 hisavana.com
+0.0.0.0 api.hisavana.com
+0.0.0.0 cc-api.hisavana.com
+0.0.0.0 api.test.hisavana.com
+0.0.0.0 api.fat1.hisavana.com
+
+# --- Eagllwin : matériaux publicitaires Transsion ---
+0.0.0.0 eagllwin.com
+0.0.0.0 api-fat0101.eagllwin.com
+0.0.0.0 material-static-oss.eagllwin.com
+0.0.0.0 transsion-eagllwin-material-static-test.oss-ap-southeast-1.aliyuncs.com
+
+# --- Shalltry : gestion des campagnes publicitaires ---
+0.0.0.0 shalltry.com
+0.0.0.0 app-manage-api.shalltry.com
+0.0.0.0 test-gslb.shalltry.com
+0.0.0.0 test-api-accel.shalltry.com
+
+# --- Sunnbird : plateforme mini-apps / recommandations sponsorisées ---
+0.0.0.0 sunnbird.com
+0.0.0.0 minproject.sunnbird.com
+0.0.0.0 minproject.test.sunnbird.com
+
+# --- CDN d'images publicitaires ---
+0.0.0.0 image.cnamedomain.com
+
+# --- Google Ads et mesure ---
+0.0.0.0 googlesyndication.com
+0.0.0.0 pagead2.googlesyndication.com
+0.0.0.0 googleadservices.com
+0.0.0.0 www.googleadservices.com
+0.0.0.0 app-measurement.com
+
+# --- SDK Facebook (traçage) ---
+0.0.0.0 graph.facebook.com
