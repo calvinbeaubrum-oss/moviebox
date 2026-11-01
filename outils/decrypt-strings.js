@@ -72,6 +72,9 @@ console.log("[auto-test]", JSON.stringify(decryptString("7bT530nHH5LZFkd6GTpHkXO
 
 const FUNC = { Q72fXAapH: "Ooo0o0000oo0oOooo", QMcx78qX: "O0000o000000oOoo", RSIAZKuyY: "o00oOoo00O0oo0000oO0Oo", Zol6cSY: "oOooo0o0ooooO00OoooO" };
 for (const cls of Object.keys(KEYS)) {
+  if (!/^[A-Za-z0-9]+$/.test(cls) || !/^[A-Za-z0-9]+$/.test(FUNC[cls])) {
+    throw new Error("identifiant inattendu (refusé avant construction du RegExp ou du chemin)");
+  }
   const src = fs.readFileSync(`sources/gj/hfr/xal/${cls}.java`, "utf8");
   const re = new RegExp(`${FUNC[cls]}\\("([^"]+)"\\)`, "g");
   let m, seen = new Set();

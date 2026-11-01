@@ -2,7 +2,12 @@
 // Usage : node outils/scan-dex.js classes-3.0.16.dex
 // Le classes.dex contient un stub DEX de ~26 Ko (4 classes) suivi du payload chiffré ijiami.dat.
 const fs = require("fs");
-const path = process.argv[2] || "classes-3.0.16.dex";
+const arg = process.argv[2] || "classes-3.0.16.dex";
+if (/[\\/]/.test(arg) || arg.includes("..")) {
+  console.error("Refusé : nom de fichier simple attendu (sans /, \\ ni ..) — exécutez depuis le dossier contenant le DEX.");
+  process.exit(2);
+}
+const path = arg;
 const buf = fs.readFileSync(path);
 console.log("taille:", buf.length);
 const needles = ["dex\n035\0", "dex\n036\0", "dex\n037\0", "dex\n038\0", "dex\n039\0"];

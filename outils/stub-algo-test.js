@@ -4,7 +4,12 @@
 // Résultat : aucun jeu de clés ne redonne le magic "dex\n035\0" — le déchiffrement du payload
 // dépend des transformations de la lib native libxybzvgn.so. Voir 04-securite/packer-ijiami.md.
 const fs = require("fs");
-const path = process.argv[2] || "classes-3.0.16.dex";
+const arg = process.argv[2] || "classes-3.0.16.dex";
+if (/[\\/]/.test(arg) || arg.includes("..")) {
+  console.error("Refusé : nom de fichier simple attendu (sans /, \\ ni ..) — exécutez depuis le dossier contenant le DEX.");
+  process.exit(2);
+}
+const path = arg;
 const buf = fs.readFileSync(path);
 const payload = buf.subarray(0x6970);
 const s = (arr) => arr.map((b) => b & 0xff);

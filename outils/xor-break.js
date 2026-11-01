@@ -4,7 +4,12 @@
 // Résultat : la clé candidate 22 a2 22 e6 22 a6 a2 e2 (8 octets) ne redonne PAS un header cohérent —
 // le chiffrement n'est pas un XOR périodique simple. Voir 04-securite/packer-ijiami.md.
 const fs = require("fs");
-const path = process.argv[2] || "classes-3.0.16.dex";
+const arg = process.argv[2] || "classes-3.0.16.dex";
+if (/[\\/]/.test(arg) || arg.includes("..")) {
+  console.error("Refusé : nom de fichier simple attendu (sans /, \\ ni ..) — exécutez depuis le dossier contenant le DEX.");
+  process.exit(2);
+}
+const path = arg;
 const buf = fs.readFileSync(path);
 
 const DATA_OFF = 0x6970; // début des données chiffrées, après le marqueur ijiami.dat
