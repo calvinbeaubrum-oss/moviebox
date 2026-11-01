@@ -1,0 +1,49 @@
+# MovieBox 3.0.15/3.0.16 — domaines publicitaires (NextDNS : domaines nus, sous-domaines inclus)
+# Extraction statique des SDK embarqués + rajouts SDK standards — 2026-10-31
+
+# Pangle / ByteDance
+pangle.io
+tiktokpangle.us
+tiktokpangle-b.us
+tiktokpangle-cdn-us.com
+pglstatp.com
+ibytedtos.com
+tiktokcdn.com
+tiktokv.us
+pangleglobal.com
+
+# Hisavana (Transsion)
+hisavana.com
+transacme.com
+
+# EagllWin / Sunnbird (TMC)
+eagllwin.com
+sunnbird.com
+
+# Vungle (Liftoff)
+ads.vungle.com
+
+# Facebook Audience Network (bidding)
+an.facebook.com
+
+# PalmPlay
+palmplaystore.com
+
+# Google (tracking pub)
+googlesyndication.com
+googleadservices.com
+app-measurement.com
+
+# Rajouts recommandés (SDK standards)
+mintegral.com
+madserving.com
+snssdk.com
+byteoversea.com
+oceanengine.com
+ibyteimg.com
+fbcdn.net
+
+# Optionnel — infra Transsion (coupe aussi config/push/oneID de l'app)
+# shalltry.com
+# tmctool.com
+# twibida.com

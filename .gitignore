@@ -1,0 +1,5 @@
+.mimosa/
+*.apk
+*.jdb2
+.DS_Store
+Thumbs.db

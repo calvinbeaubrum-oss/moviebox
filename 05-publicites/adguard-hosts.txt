@@ -1,0 +1,71 @@
+! ============================================================
+! MovieBox 3.0.15/3.0.16 — domaines publicitaires extraits du code
+! Format : AdGuard / uBlock (||domaine^ = domaine + sous-domaines)
+! Source : extraction statique des SDK embarqués (mb15/sources)
+! Généré le 2026-10-31
+! ============================================================
+
+! --- Pangle / ByteDance (vus dans le code) ---
+||pangle.io^
+||tiktokpangle.us^
+||tiktokpangle-b.us^
+||tiktokpangle-cdn-us.com^
+||pglstatp.com^
+||ibytedtos.com^
+||tiktokcdn.com^
+||tiktokv.us^
+||pangleglobal.com^
+
+! --- Hisavana (Transsion) ---
+||hisavana.com^
+||transacme.com^
+
+! --- EagllWin / Sunnbird (TMC) ---
+||eagllwin.com^
+||sunnbird.com^
+
+! --- Vungle (Liftoff) ---
+||ads.vungle.com^
+
+! --- Facebook Audience Network (bidding) ---
+||an.facebook.com^
+
+! --- PalmPlay (distribution pubs/installations) ---
+||palmplaystore.com^
+
+! --- Google (tracking pub résiduel vus dans le code) ---
+||googlesyndication.com^
+||googleadservices.com^
+||app-measurement.com^
+
+! ============================================================
+! Rajouts recommandés (SDK standards, non vus en clair dans le code —
+! hosts construits dynamiquement par Mintegral/Pangle)
+! ============================================================
+||mintegral.com^
+||madserving.com^
+||snssdk.com^
+||byteoversea.com^
+||oceanengine.com^
+||ibyteimg.com^
+||fbcdn.net^
+
+! ============================================================
+! OPTIONNEL — infra Transsion (télémétrie/oneID/config de l'app ;
+! bloquer coupe aussi config cloud + identifiant cross-app)
+! ============================================================
+! ||shalltry.com^
+! ||tmctool.com^
+! ||twibida.com^
+
+! ============================================================
+! À NE PAS BLOQUER (fonctionnement app / contenu / paiement)
+! ============================================================
+! aoneroom.com — API + CDN contenu
+! byte-app.com — mini-apps
+! moviebox.ng / movie-box.tv / movieboxhd.net / mvbrowse.com / moviebox.club|biz|ac|ph — deep links web
+! paynicorn.com — paiement
+! aliyuncs.com (bucket miniapp) — mini-apps
+! googleapis.com (Places) — fonctionnalité nearby
+! ipinfo.io / icanhazip.com / ifconfig.me / pool.ntp.org / time.cloudflare.com — IP/NTP TranPay
+! dlight-app.com / ahagamecenter.com / hakunaymatata.com — partenaires H5
